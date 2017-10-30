@@ -1,0 +1,22 @@
+{
+  "name": "witlivingtest-web",
+  "authors": [
+    "AJ Alves <aj.alves@zerokol.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "vendor/assets/components"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
