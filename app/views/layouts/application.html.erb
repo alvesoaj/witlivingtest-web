@@ -1,14 +1,63 @@
+<!-- http://getbootstrap.com/docs/4.0/examples/narrow-jumbotron/# -->
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>WitlivingtestWeb</title>
-    <%= csrf_meta_tags %>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+        <link rel="icon" href="http://getbootstrap.com/favicon.ico">
 
-  <body>
-    <%= yield %>
-  </body>
+        <title><%= yield(:title) %></title>
+
+        <%= csrf_meta_tags %>
+
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+    <body>
+        <div class="container">
+            <header class="header clearfix">
+                <nav>
+                    <ul class="nav nav-pills float-right">
+                        <li class="nav-item">
+                            <%= link_to(t('views.layout.menu.home'), root_path) %>
+                        </li>
+                        <li class="nav-item">
+                            <%= link_to(t('views.layout.menu.products'), root_path) %>
+                        </li>
+                        <% if user_signed_in? %>
+                            <li class="nav-item">
+                                <%= link_to(t('views.layout.menu.users'), root_path) %>
+                            </li>
+                        <% end %>
+                    </ul>
+                </nav>
+                <p class="notice"><%= notice %></p>
+                <p class="alert"><%= alert %></p>
+                <h3 class="text-muted">
+                    <% unless user_signed_in? %>
+                        <%= t('hello_user', user_name: 'Visitor').html_safe %>
+                        <%= t('views.layout.no_user').html_safe %>
+                    <% else %>
+                        <%= t('hello_signed_user', user_name: current_user.name).html_safe %>
+                        <%= t('views.layout.cart').html_safe %>
+                    <% end %>
+                </h3>
+            </header>
+            <main role="main">
+                <div class="jumbotron">
+                    <h1 class="display-3"><%= t('app_name') %></h1>
+                    <p class="lead"><%= t('app_description') %></p>
+                </div>
+
+                <%= yield %>
+            </main>
+            <footer class="footer">
+                <p>© Company 2017</p>
+            </footer>
+        </div> <!-- /container -->
+    </body>
 </html>

@@ -1,0 +1,11 @@
+en:
+  views:
+    layout:
+      menu:
+        home: Home
+        products: Products
+        users: Users
+      no_user: '| You are not connected! Please <a href="/users/sign_in">Sign In</a> OR <a href="/users/sign_up">Sign Up</a> first!'
+      cart: ' | See <a href="/cart">Cart</a>'
+    miscellaneous:
+      test: 'Test'

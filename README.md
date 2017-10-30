@@ -22,4 +22,3 @@
 ### Installing Bootstrap:
 
 `bower install bootstrap --save`
-
