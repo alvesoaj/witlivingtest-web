@@ -16,6 +16,11 @@
 
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+        <script type="text/javascript">
+            // Global variable to manage cart in JS
+            window.cart = JSON.parse('<%= escape_javascript(session[:cart].html_safe) %>');
+        </script>
     </head>
     <body>
         <div class="container">
@@ -55,11 +60,17 @@
                     <p class="lead"><%= t('app_description') %></p>
                 </div>
                 
-                <p class="notice"><%= notice %></p>
-                <p class="alert"><%= alert %></p>
+                <% if notice.present? %>
+                    <p class="alert alert-success"><%= notice %></p>
+                <% end %>
+
+                <% if alert.present? %>
+                    <p class="alert alert-warning"><%= alert %></p>
+                <% end %>
 
                 <%= yield %>
             </main>
+            <br>
             <footer class="footer">
                 <p><%= t('footer')%></p>
             </footer>

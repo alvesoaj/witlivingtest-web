@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     
     root to: 'miscellaneous#home'
 
+    get '/cart' => 'miscellaneous#cart', as: :cart
+
     resources :products
     resources :users
 end

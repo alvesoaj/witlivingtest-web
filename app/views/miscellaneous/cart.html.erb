@@ -1,0 +1,73 @@
+<%= content_for(:title, t('app_name')) %>
+
+<div class="row marketing">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="pull-left">
+                            <h1><%= t('views.miscellaneous.cart.title') %></h1> <em><%= t('views.miscellaneous.cart.check') %></em>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="pull-right">
+                            <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> <%= t('views.miscellaneous.cart.clear') %></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div id="no-more-tables">
+                    <table class="table table-hover table-condensed">
+                        <thead>
+                            <tr>
+                                <th><%= t('activerecord.attributes.product.photo') %></th>
+                                <th><%= t('activerecord.attributes.product.name') %></th>
+                                <th><%= t('activerecord.attributes.product.price') %></th>
+                                <th><%= t('activerecord.attributes.product.quantity') %></th>
+                                <th><%= t('views.miscellaneous.cart.total') %></th>
+                                <th colspan="3"></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <% @products.each do |product| %>
+                                <tr>
+                                    <td data-title="<%= t('activerecord.attributes.product.photo') %>"><%= image_tag(product.photo.thumb.url, class: 'img-rounded') %></td>
+                                    <td data-title="<%= t('activerecord.attributes.product.name') %>"><%= product.name %></td>
+                                    <td data-title="<%= t('activerecord.attributes.product.price') %>"><%= check_price(product) %></td>
+                                    <td data-title="<%= t('activerecord.attributes.product.quantity') %>"><%= check_quantity(product) %></td>
+                                    <td data-title="<%= t('views.miscellaneous.cart.total') %>"><%= check_total(product) %></td>
+                                    <td>
+                                        <button type="button" class="btn btn-info"><span class="glyphicon glyphicon-refresh"></span></button>
+                                        <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+                                    </td>
+                                </tr>
+                            <% end %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="pull-left">
+                            <%= link_to(root_path, class: 'btn btn-info') do %>
+                                <span class="glyphicon glyphicon-tags"></span> <%= t('views.miscellaneous.cart.buy_more') %>
+                            <% end %>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <h4><%= t('views.miscellaneous.cart.finish_order') %> <%= t('views.miscellaneous.cart.total', total: check_cart_total(@products)) %>:</h4>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="pull-right">
+                            <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-credit-card"></span> <%= t('views.miscellaneous.cart.pay') %></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

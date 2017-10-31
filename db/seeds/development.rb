@@ -41,7 +41,7 @@ Product.create!({
 })
 Product.create!({
     photo: File.open('db/seeds/files/rest-rails.jpg'),
-    name: 'Restfull Rails Development',
+    name: 'Restful Rails Development',
     description: 'An Amazing book to learn everything to build the world in Ruby.',
     price: 95.2,
     quantity: 200

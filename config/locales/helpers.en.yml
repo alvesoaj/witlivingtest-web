@@ -1,0 +1,5 @@
+en:
+  helpers:
+    products:
+      price_change: 'Price was: €%{old_p}<br>Now, it is: €%{new_p}'
+      quantity_change: 'You selected: %{old_q}<br>But Now we just have: %{new_q}'

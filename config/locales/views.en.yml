@@ -13,9 +13,21 @@ en:
         users: '<span class="glyphicon glyphicon-user"></span> Users'
         sign_out: '<span class="glyphicon glyphicon-log-out"></span> Sign out'
       no_user: '| You are not connected! Please <a href="/users/sign_in"><span class="glyphicon glyphicon-log-in"></span> Sign In</a> OR <a href="/users/sign_up">Sign Up</a>!'
-      cart: ' | See <a href="/cart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a>'
+      cart: ' | See <a id="js-cart" href="/cart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a>'
     miscellaneous:
-      stock: Stock
+      home:
+        stock: Stock
+      cart:
+        title: Cart
+        check: Check your order before complete it!
+        clear: Clear Cart
+        remove: Remove
+        refresh: Update
+        total: Total
+        finish_order: Finish Order
+        pay: Pay Now
+        total: '(€%{total})'
+        buy_more: No, I want to Buy More!
     products:
       new: New product
       edit: Edit product
