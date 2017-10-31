@@ -8,7 +8,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+        <link rel="icon" href="<%= asset_path('cart.ico') %>">
 
         <title><%= yield(:title) %></title>
 
@@ -47,7 +47,7 @@
             </header>
             <main role="main">
                 <div class="jumbotron">
-                    <h1 class="display-3"><%= t('app_name') %></h1>
+                    <h1 class="display-3"><%= image_tag('cart.png') %> <%= t('app_name') %></h1>
                     <p class="lead"><%= t('app_description') %></p>
                 </div>
                 
@@ -57,7 +57,7 @@
                 <%= yield %>
             </main>
             <footer class="footer">
-                <p><%= t('views.footer')%></p>
+                <p><%= t('footer')%></p>
             </footer>
         </div> <!-- /container -->
     </body>

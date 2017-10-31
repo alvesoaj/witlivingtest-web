@@ -1,5 +1,6 @@
 en:
-  app_name: My Amazing Store
-  app_description: Wellcome to our amazing book store, include the best ones to your cart and change it in the end!
+  app_name: my Amazing Shop
+  footer: © Amazing Shop Company 2017
+  app_description: Wellcome to our amazing book shop, include the best ones to your cart and change it in the end!
   hello_user: Hello <strong>%{user_name}</strong>
   hello_signed_user: Hello <strong><a href="/users/edit">%{user_name}</a></strong>
