@@ -1,0 +1,14 @@
+one:
+  name: Test Product 1
+  price: 10.0
+  quantity: 10
+
+two:
+  name: Test Product 2
+  price: 20.0
+  quantity: 100
+
+thee:
+  name: Test Product 3
+  price: 2.0
+  quantity: 40

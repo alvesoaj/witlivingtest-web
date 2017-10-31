@@ -1,0 +1,11 @@
+one:
+  name: User 1
+  email: user01@email.com
+
+two:
+  name: User 2
+  email: user02@email.com
+
+thee:
+  name: User 3
+  email: user03@email.com
