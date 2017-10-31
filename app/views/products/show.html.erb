@@ -1,21 +1,39 @@
 <%= content_for(:title, t('activerecord.models.product.one')) %>
 
 <div class="row">
-    <p>
-        <strong><%= t("activerecord.attributes.product.name") %>:</strong>
-        <%= @product.name %>
-    </p>
+    <div class="col-md-6">
+        <p>
+            <strong><%= t("activerecord.attributes.product.photo") %>:</strong>
+            <%= image_tag(@product.photo.medium.url, class: 'img-rounded') %>
+        </p>
+    </div>
+    <div class="col-md-6">
+        <p>
+            <strong><%= t("activerecord.attributes.product.name") %>:</strong>
+            <%= @product.name %>
+        </p>
 
-    <p>
-        <strong><%= t("activerecord.attributes.product.price") %>:</strong>
-        <%= @product.price %>
-    </p>
+        <p>
+            <strong><%= t("activerecord.attributes.product.description") %>:</strong>
+            <%= @product.description %>
+        </p>
 
-    <p>
-        <strong><%= t("activerecord.attributes.product.quantity") %>:</strong>
-        <%= @product.quantity %>
-    </p>
+        <p>
+            <strong><%= t("activerecord.attributes.product.price") %>:</strong>
+            <%= number_to_currency(@product.price, unit: t('unit')) %>
+        </p>
 
-    <%= link_to t('views.edit'), edit_product_path(@product), class: 'btn btn-primary' %> |
-    <%= link_to t('views.back'), products_path, class: 'btn btn-default' %>
+        <p>
+            <strong><%= t("activerecord.attributes.product.quantity") %>:</strong>
+            <%= @product.quantity %>
+        </p>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <%= link_to t('views.edit'), edit_product_path(@product), class: 'btn btn-primary' %> |
+        <%= link_to t('views.back'), products_path, class: 'btn btn-default' %>
+    </div>
 </div>

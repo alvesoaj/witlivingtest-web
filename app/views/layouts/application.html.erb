@@ -23,14 +23,17 @@
                 <nav>
                     <ul class="nav nav-pills float-right">
                         <li class="nav-item">
-                            <%= link_to(t('views.layout.menu.home'), root_path) %>
+                            <%= link_to(t('views.layout.menu.home').html_safe, root_path) %>
                         </li>
                         <% if user_signed_in? %>
                             <li class="nav-item">
-                                <%= link_to(t('views.layout.menu.products'), products_path) %>
+                                <%= link_to(t('views.layout.menu.products').html_safe, products_path) %>
                             </li>
                             <li class="nav-item">
-                                <%= link_to(t('views.layout.menu.users'), users_path) %>
+                                <%= link_to(t('views.layout.menu.users').html_safe, users_path) %>
+                            </li>
+                            <li class="nav-item">
+                                <%= link_to(t('views.layout.menu.sign_out').html_safe, destroy_user_session_path, method: 'delete') %>
                             </li>
                         <% end %>
                     </ul>
@@ -38,6 +41,7 @@
                 <h3 class="text-muted">
                     <% unless user_signed_in? %>
                         <%= t('hello_user', user_name: 'Visitor').html_safe %>
+                        <%= t('views.layout.cart').html_safe %>
                         <%= t('views.layout.no_user').html_safe %>
                     <% else %>
                         <%= t('hello_signed_user', user_name: current_user.name).html_safe %>

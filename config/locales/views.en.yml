@@ -8,13 +8,14 @@ en:
     save: Save
     layout:
       menu:
-        home: Home
-        products: Products
-        users: Users
-      no_user: '| You are not connected! Please <a href="/users/sign_in">Sign In</a> OR <a href="/users/sign_up">Sign Up</a> first!'
-      cart: ' | See <a href="/cart">Cart</a>'
+        home: '<span class="glyphicon glyphicon-home"></span> Home'
+        products: '<span class="glyphicon glyphicon-book"></span> Products'
+        users: '<span class="glyphicon glyphicon-user"></span> Users'
+        sign_out: '<span class="glyphicon glyphicon-log-out"></span> Sign out'
+      no_user: '| You are not connected! Please <a href="/users/sign_in"><span class="glyphicon glyphicon-log-in"></span> Sign In</a> OR <a href="/users/sign_up">Sign Up</a>!'
+      cart: ' | See <a href="/cart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a>'
     miscellaneous:
-      test: Test
+      stock: Stock
     products:
       new: New product
       edit: Edit product

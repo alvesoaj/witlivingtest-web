@@ -1,25 +1,30 @@
 <%= content_for(:title, t('app_name')) %>
 
 <div class="row marketing">
-    <div class="col-lg-6">
-        <h4>Subheading</h4>
-        <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-        <h4>Subheading</h4>
-        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-        <h4>Subheading</h4>
-        <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-    </div>
-
-    <div class="col-lg-6">
-        <h4>Subheading</h4>
-        <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-        <h4>Subheading</h4>
-        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-        <h4>Subheading</h4>
-        <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+    <div class="col-md-12">
+        <% @products.in_groups_of(3, false) do |group| %>
+            <div class="col-lg-6">
+                <% group.each do |product| %>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <%= image_tag(product.photo.thumb.url, class: 'img-thumbnail') %>
+                        </div>
+                        <div class="col-md-8">
+                            <h4><%= product.name %></h4>
+                            <p><%= product.description %></p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><%= t('views.miscellaneous.stock') %>: <%= product.quantity %> | <strong><%= number_to_currency(product.price, unit: t('unit')) %></strong> </p>
+                                </div>
+                                <div class="col-md-6">
+                                    <button type="button" class="btn btn-success">+<span class="glyphicon glyphicon-shopping-cart"></span></button>
+                                    <button type="button" class="btn btn-danger">-<span class="glyphicon glyphicon-shopping-cart"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        <% end %>
     </div>
 </div>

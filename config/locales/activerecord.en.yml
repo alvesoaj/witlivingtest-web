@@ -4,7 +4,7 @@ en:
       product:
         one: Product
         other: Products
-      user:
+      xuser:
         one: User
         other: Users
     attributes:
@@ -14,9 +14,12 @@ en:
         updated_at: Updated at
       product:
         <<: *default_attributes
+        photo: Photo
         name: Name
+        description: Description
         price: Price
         quantity: Quantity
       user:
         <<: *default_attributes
+        avatar: Avatar
         name: Name

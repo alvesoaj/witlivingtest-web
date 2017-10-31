@@ -41,6 +41,14 @@ gem 'devise'
 gem 'cancancan'
 gem 'rolify'
 
+### FILE UPLOADS
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'carrierwave-processing'
+
+### PAGINATION
+gem 'kaminari'
+
 group :development, :test do
     # Call 'byebug' anywhere in the code to stop execution and get a debugger console
     gem 'byebug', platform: :mri

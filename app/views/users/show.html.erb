@@ -1,11 +1,22 @@
 <%= content_for(:title, t('activerecord.models.user.one')) %>
 
 <div class="row">
-    <p>
-        <strong><%= t("activerecord.attributes.user.name") %>:</strong>
-        <%= @user.name %>
-    </p>
+    <div class="col-md-6">
+        <img src="https://api.adorable.io/avatars/140/<%= @user.email %>.io.png" alt="" class="img-circle">
+    </div>
+    <div class="col-md-6">
+        <p>
+            <strong><%= t("activerecord.attributes.user.name") %>:</strong>
+            <%= @user.name %>
+        </p>
+    </div>
+</div>
 
-    <%= link_to t('views.edit'), edit_user_path(@user), class: 'btn btn-primary' %> |
-    <%= link_to t('views.back'), users_path, class: 'btn btn-default' %>
+<br>
+
+<div class="row">
+    <div class="col-md-12">
+        <%= link_to t('views.edit'), edit_user_path(@user), class: 'btn btn-primary' %> |
+        <%= link_to t('views.back'), users_path, class: 'btn btn-default' %>
+    </div>
 </div>
