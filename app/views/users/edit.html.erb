@@ -1,0 +1,10 @@
+<%= content_for(:title, t('views.users.edit')) %>
+
+<div class="row">
+    <h1><%= t('views.users.edit') %></h1>
+
+    <%= render 'form', user: @user %>
+
+    <%= link_to t('views.show'), @user, class: 'btn btn-info' %> |
+    <%= link_to t('views.back'), users_path, class: 'btn btn-default' %>
+</div>

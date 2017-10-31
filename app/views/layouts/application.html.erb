@@ -25,18 +25,16 @@
                         <li class="nav-item">
                             <%= link_to(t('views.layout.menu.home'), root_path) %>
                         </li>
-                        <li class="nav-item">
-                            <%= link_to(t('views.layout.menu.products'), root_path) %>
-                        </li>
                         <% if user_signed_in? %>
                             <li class="nav-item">
-                                <%= link_to(t('views.layout.menu.users'), root_path) %>
+                                <%= link_to(t('views.layout.menu.products'), products_path) %>
+                            </li>
+                            <li class="nav-item">
+                                <%= link_to(t('views.layout.menu.users'), users_path) %>
                             </li>
                         <% end %>
                     </ul>
                 </nav>
-                <p class="notice"><%= notice %></p>
-                <p class="alert"><%= alert %></p>
                 <h3 class="text-muted">
                     <% unless user_signed_in? %>
                         <%= t('hello_user', user_name: 'Visitor').html_safe %>
@@ -52,11 +50,14 @@
                     <h1 class="display-3"><%= t('app_name') %></h1>
                     <p class="lead"><%= t('app_description') %></p>
                 </div>
+                
+                <p class="notice"><%= notice %></p>
+                <p class="alert"><%= alert %></p>
 
                 <%= yield %>
             </main>
             <footer class="footer">
-                <p>© Company 2017</p>
+                <p><%= t('views.footer')%></p>
             </footer>
         </div> <!-- /container -->
     </body>

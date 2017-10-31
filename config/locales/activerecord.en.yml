@@ -1,0 +1,22 @@
+en:
+  activerecord:
+    models:
+      product:
+        one: Product
+        other: Products
+      user:
+        one: User
+        other: Users
+    attributes:
+      default_attributes: &default_attributes
+        id: ID
+        created_at: Created at
+        updated_at: Updated at
+      product:
+        <<: *default_attributes
+        name: Name
+        price: Price
+        quantity: Quantity
+      user:
+        <<: *default_attributes
+        name: Name

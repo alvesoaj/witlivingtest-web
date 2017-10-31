@@ -1,0 +1,11 @@
+<%= content_for(:title, t('activerecord.models.user.one')) %>
+
+<div class="row">
+    <p>
+        <strong><%= t("activerecord.attributes.user.name") %>:</strong>
+        <%= @user.name %>
+    </p>
+
+    <%= link_to t('views.edit'), edit_user_path(@user), class: 'btn btn-primary' %> |
+    <%= link_to t('views.back'), users_path, class: 'btn btn-default' %>
+</div>

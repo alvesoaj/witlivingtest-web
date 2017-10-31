@@ -1,0 +1,21 @@
+<%= content_for(:title, t('activerecord.models.product.one')) %>
+
+<div class="row">
+    <p>
+        <strong><%= t("activerecord.attributes.product.name") %>:</strong>
+        <%= @product.name %>
+    </p>
+
+    <p>
+        <strong><%= t("activerecord.attributes.product.price") %>:</strong>
+        <%= @product.price %>
+    </p>
+
+    <p>
+        <strong><%= t("activerecord.attributes.product.quantity") %>:</strong>
+        <%= @product.quantity %>
+    </p>
+
+    <%= link_to t('views.edit'), edit_product_path(@product), class: 'btn btn-primary' %> |
+    <%= link_to t('views.back'), products_path, class: 'btn btn-default' %>
+</div>
