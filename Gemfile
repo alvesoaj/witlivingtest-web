@@ -37,10 +37,6 @@ gem 'jbuilder', '~> 2.5'
 ### AUTHENTICATION
 gem 'devise'
 
-### AUTHORIZATION
-gem 'cancancan'
-gem 'rolify'
-
 ### FILE UPLOADS
 gem 'carrierwave'
 gem 'mini_magick'
