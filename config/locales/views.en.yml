@@ -28,6 +28,7 @@ en:
         pay: Pay Now
         ctotal: '(€%{total})'
         buy_more: No, I want to Buy More!
+        payout: Thank you to buy with us!
     products:
       new: New product
       edit: Edit product

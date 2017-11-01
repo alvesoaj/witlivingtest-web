@@ -98,4 +98,20 @@ class Services::MiscellaneousController < ApplicationController
 
         render json: h_session
     end
+
+    def pay
+        h_session = JSON.parse(session[:cart])
+        
+        h_session['products'].each do |s_product|
+            product = Product.find(s_product['id'])
+            product.update(quantity: product.quantity - s_product['quantity'])
+        end
+        
+        h_session['products'] = []
+
+        session[:cart] = h_session.to_json
+        session[:create_at] = Time.current
+
+        render json: h_session
+    end
 end

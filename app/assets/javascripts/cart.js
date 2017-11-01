@@ -81,6 +81,19 @@ document.addEventListener('turbolinks:load', function() {
             });
         }
     });
+    // Event to rmv all books from the cart
+    jQuery('#js-pay').on('click', function(event) {
+        if (confirm('Are you sure?') == true) {
+            var jqxhr = jQuery.getJSON('/services/miscellaneous/pay', function(data) {
+                jQuery('#js-payoutModal').modal('show');
+                setTimeout(function() {
+                    window.location.href = '/';
+                }, 5000);
+            }).fail(function() {
+                console.log('error');
+            });
+        }
+    });
     // Always build tooltips
     manageMainCart();
 });

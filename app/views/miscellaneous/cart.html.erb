@@ -63,11 +63,23 @@
                     </div>
                     <div class="col-md-2">
                         <div class="pull-right">
-                            <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-credit-card"></span> <%= t('views.miscellaneous.cart.pay') %></button>
+                            <button id="js-pay" type="button" class="btn btn-success"><span class="glyphicon glyphicon-credit-card"></span> <%= t('views.miscellaneous.cart.pay') %></button>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<div id="js-payoutModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header"></div>
+            <div class="modal-body">
+                <h3><span class="glyphicon glyphicon-send"></span> <%= t('views.miscellaneous.cart.payout') %></h3>
+            </div>
+            <div class="modal-footer"></div>
         </div>
     </div>
 </div>
