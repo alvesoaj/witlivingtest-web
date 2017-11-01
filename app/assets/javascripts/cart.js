@@ -18,7 +18,7 @@ document.addEventListener('turbolinks:load', function() {
     // Event to add one book in cart
     jQuery('.js-add1ToCart').on('click', function(event) {
         jQuery('.js-tooltips').tooltip('destroy');
-        var jqxhr = jQuery.getJSON('/services/miscellaneous/add_one_to_cart/' + jQuery(this).attr('data-product-id'), function(data) {
+        jQuery.getJSON('/services/miscellaneous/add_one_to_cart/' + jQuery(this).attr('data-product-id'), function(data) {
             window.cart = data;
             setTimeout(function() {
                 manageMainCart();
@@ -30,7 +30,7 @@ document.addEventListener('turbolinks:load', function() {
     // Event to rmv one book from the cart
     jQuery('.js-rmv1FromCart').on('click', function(event) {
         jQuery('.js-tooltips').tooltip('destroy');
-        var jqxhr = jQuery.getJSON('/services/miscellaneous/rmv_one_from_cart/' + jQuery(this).attr('data-product-id'), function(data) {
+        jQuery.getJSON('/services/miscellaneous/rmv_one_from_cart/' + jQuery(this).attr('data-product-id'), function(data) {
             window.cart = data;
             setTimeout(function() {
                 manageMainCart();
@@ -42,7 +42,7 @@ document.addEventListener('turbolinks:load', function() {
     // Event to rmv all books from the cart
     jQuery('.js-rmvFromCart').on('click', function(event) {
         if (confirm('Are you sure?') == true) {
-            var jqxhr = jQuery.getJSON('/services/miscellaneous/rmv_product_from_cart/' + jQuery(this).attr('data-product-id'), function(data) {
+            jQuery.getJSON('/services/miscellaneous/rmv_product_from_cart/' + jQuery(this).attr('data-product-id'), function(data) {
                 location.reload();
             }).fail(function() {
                 console.log('error');
@@ -53,7 +53,7 @@ document.addEventListener('turbolinks:load', function() {
     jQuery('.js-updCartBtn').on('click', function(event) {
         var product_id = jQuery(this).attr('data-product-id');
         var quantity = jQuery('#js-updCartInp-' + product_id).val();
-        var jqxhr = jQuery.getJSON('/services/miscellaneous/upd_product_from_cart/' + product_id + '/' + quantity, function(data) {
+        jQuery.getJSON('/services/miscellaneous/upd_product_from_cart/' + product_id + '/' + quantity, function(data) {
             location.reload();
         }).fail(function() {
             console.log('error');
@@ -64,7 +64,7 @@ document.addEventListener('turbolinks:load', function() {
         if (event.which == 13 || event.keyCode == 13) { // ENTER
             var product_id = jQuery(this).attr('data-product-id');
             var quantity = jQuery(this).val();
-            var jqxhr = jQuery.getJSON('/services/miscellaneous/upd_product_from_cart/' + product_id + '/' + quantity, function(data) {
+            jQuery.getJSON('/services/miscellaneous/upd_product_from_cart/' + product_id + '/' + quantity, function(data) {
                 location.reload();
             }).fail(function() {
                 console.log('error');
@@ -74,8 +74,8 @@ document.addEventListener('turbolinks:load', function() {
     // Event to rmv all books from the cart
     jQuery('#js-clrCart').on('click', function(event) {
         if (confirm('Are you sure?') == true) {
-            var jqxhr = jQuery.getJSON('/services/miscellaneous/clear_cart', function(data) {
-                location.reload();
+            jQuery.getJSON('/services/miscellaneous/clear_cart', function(data) {
+                window.location.href = '/';
             }).fail(function() {
                 console.log('error');
             });
@@ -84,7 +84,7 @@ document.addEventListener('turbolinks:load', function() {
     // Event to rmv all books from the cart
     jQuery('#js-pay').on('click', function(event) {
         if (confirm('Are you sure?') == true) {
-            var jqxhr = jQuery.getJSON('/services/miscellaneous/pay', function(data) {
+            jQuery.getJSON('/services/miscellaneous/pay', function(data) {
                 jQuery('#js-payoutModal').modal('show');
                 setTimeout(function() {
                     window.location.href = '/';
