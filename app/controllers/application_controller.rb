@@ -12,14 +12,14 @@ class ApplicationController < ActionController::Base
                     session[:cart] = nil;
                 end
             end
-
+            # If session not created, create one
             if session[:cart].nil?
                 session[:cart] = {
                     id: SecureRandom.uuid,
                     create_at: Time.current,
                     products: [
-                        { id: 2, quantity: 2, price: 25.0 },
-                        { id: 5, quantity: 500, price: 15.0 }
+                        #{ id: 2, quantity: 2, price: 25.0 },
+                        #{ id: 5, quantity: 500, price: 15.0 }
                     ]
                 }.to_json
             end

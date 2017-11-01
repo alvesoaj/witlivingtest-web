@@ -3,10 +3,14 @@ require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
     fixtures :users
 
+    before :each do
+        sign_in users(:one)
+    end
+
     describe 'GET #index' do
         it 'populates an array of users' do
             get :index
-            expect(assigns(:users)).to eq(User.all)
+            expect(assigns(:users)).not_to eq(nil)
         end
 
         it 'renders the :index view' do
@@ -67,12 +71,12 @@ RSpec.describe UsersController, type: :controller do
         context 'with invalid attributes' do
             it 'does not save the new user in the database' do
                 expect {
-                    post :create, params: { user: { name: 'XX' } }
+                    post :create, params: { user: { name: 'XX', email: 'user@email.com', password: '123456789' } }
                 }.to_not change(User, :count)
             end
 
             it 're-renders the :new template' do
-                post :create, params: { user: { name: 'XX' } }
+                post :create, params: { user: { name: 'XX', email: 'user@email.com', password: '123456789' } }
                 expect(response).to render_template(:new)
             end
         end

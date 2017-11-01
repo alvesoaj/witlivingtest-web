@@ -2,11 +2,16 @@ require 'rails_helper'
 
 RSpec.describe ProductsController, type: :controller do
     fixtures :products
+    fixtures :users
+
+    before :each do
+        sign_in users(:one)
+    end
 
     describe 'GET #index' do
         it 'populates an array of products' do
             get :index
-            expect(assigns(:products)).to eq(Product.all)
+            expect(assigns(:products)).not_to eq(nil)
         end
 
         it 'renders the :index view' do
