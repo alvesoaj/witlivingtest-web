@@ -28,7 +28,7 @@ RSpec.describe ProductsController, type: :controller do
         end
 
         it 'renders the :show template' do
-            product = Product.create({ name: 'Test Name', price: 100, quantity: 3 })
+            product = Product.create({ name: 'Test Name', description: 'Description Test', price: 100, quantity: 3 })
             get :show, params: { id: product }
             expect(response).to render_template(:show)
         end
@@ -59,12 +59,12 @@ RSpec.describe ProductsController, type: :controller do
         context 'with valid attributes' do
             it 'saves the new product in the database' do
                 expect {
-                    post :create, params: { product: { name: 'Test Name', price: 100, quantity: 3 } }
+                    post :create, params: { product: { name: 'Test Name', description: 'Description Test', price: 100, quantity: 3 } }
                 }.to change(Product, :count).by(1)
             end
 
             it 'redirects to the show product' do
-                post :create, params: { product: { name: 'Test Name', price: 100, quantity: 3 } }
+                post :create, params: { product: { name: 'Test Name', description: 'Description Test', price: 100, quantity: 3 } }
                 expect(response).to redirect_to(Product.last)
             end
         end
