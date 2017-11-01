@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
     namespace :services do
         get 'miscellaneous/add_one_to_cart/:product_id' => 'miscellaneous#add_one_to_cart'
-        get 'miscellaneous/rmv_one_to_cart/:product_id' => 'miscellaneous#rmv_one_to_cart'
+        get 'miscellaneous/rmv_one_from_cart/:product_id' => 'miscellaneous#rmv_one_from_cart'
         get 'miscellaneous/rmv_product_from_cart/:product_id' => 'miscellaneous#rmv_product_from_cart'
         get 'miscellaneous/upd_product_from_cart/:product_id/:quantity' => 'miscellaneous#upd_product_from_cart'
         get 'miscellaneous/clear_cart' => 'miscellaneous#clear_cart'

@@ -13,7 +13,7 @@ en:
         users: '<span class="glyphicon glyphicon-user"></span> Users'
         sign_out: '<span class="glyphicon glyphicon-log-out"></span> Sign out'
       no_user: '| You are not connected! Please <a href="/users/sign_in"><span class="glyphicon glyphicon-log-in"></span> Sign In</a> OR <a href="/users/sign_up">Sign Up</a>!'
-      cart: ' | See <a id="js-cart" href="/cart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a>'
+      cart: ' | See <a id="js-cart" class="js-tooltips" href="/cart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a>'
     miscellaneous:
       home:
         stock: Stock

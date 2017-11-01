@@ -7,9 +7,9 @@ function manageMainCart() {
             var product = window.cart['products'][i];
             cartQuantity += product['quantity'];
             cartPrice += product['quantity'] * product['price'];
-            jQuery('#js-add1ToCart-' + product['id']).tooltip({ placement: 'bottom', title: product['quantity'], trigger: 'manual' }).tooltip('show');
+            jQuery('#js-add1ToCart-' + product['id']).tooltip({ placement: 'bottom', title: product['quantity'], trigger: 'manual' });
         }
-        jQuery('#js-cart').tooltip({ placement: 'top', title: '📚 ' + cartQuantity + ' | €' + cartPrice.toFixed(2), trigger: 'manual' }).tooltip('show');
+        jQuery('#js-cart').tooltip({ placement: 'top', title: '📚 ' + cartQuantity + ' | €' + cartPrice.toFixed(2), trigger: 'manual' });
     }
     jQuery('.js-tooltips').tooltip('show');
 }
