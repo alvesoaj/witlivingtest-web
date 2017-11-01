@@ -8,7 +8,7 @@
 
 puts '### Creating Users'
 User.create!(name: 'João Semnome', email: 'joao@email.com', password: '123456789')
-User.create!(name: 'Diogo Connome', email: 'diogo@email.com', password: '123456789')
+User.create!(name: 'Diogo Comnome', email: 'diogo@email.com', password: '123456789')
 
 puts '### Creating Products'
 Product.create!({
