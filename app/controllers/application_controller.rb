@@ -6,8 +6,22 @@ class ApplicationController < ActionController::Base
 
     protected
         def check_cart_section
+            # session expires 2 days before
+            if session[:cart].present?
+                if ((Time.current.to_time - JSON.parse(session[:cart])['create_at'].to_time) / 60) > 2880.0 # 34h * 60min in each
+                    session[:cart] = nil;
+                end
+            end
+
             if session[:cart].nil?
-                session[:cart] = '{ "id": "' + SecureRandom.uuid + '", "products": [ { "id": 2, "quantity": 2, "price": 25.0 }, { "id": 5, "quantity": 500, "price": 15.0 }] }'
+                session[:cart] = {
+                    id: SecureRandom.uuid,
+                    create_at: Time.current,
+                    products: [
+                        { id: 2, quantity: 2, price: 25.0 },
+                        { id: 5, quantity: 500, price: 15.0 }
+                    ]
+                }.to_json
             end
         end
 

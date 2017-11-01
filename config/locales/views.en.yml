@@ -26,7 +26,7 @@ en:
         total: Total
         finish_order: Finish Order
         pay: Pay Now
-        total: '(€%{total})'
+        ctotal: '(€%{total})'
         buy_more: No, I want to Buy More!
     products:
       new: New product

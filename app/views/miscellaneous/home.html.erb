@@ -17,8 +17,8 @@
                                     <p><%= t('views.miscellaneous.home.stock') %>: <%= product.quantity %> | <strong><%= number_to_currency(product.price, unit: t('unit')) %></strong> </p>
                                 </div>
                                 <div class="col-md-6">
-                                    <button id="js-add1ToCart-<%= product.id %>" type="button" class="btn btn-success js-add1ToCart" data-product-id="<%= product.id %>">+<span class="glyphicon glyphicon-shopping-cart"></span></button>
-                                    <button id="js-rmv1ToCart-<%= product.id %>" type="button" class="btn btn-danger js-rmv1ToCart" data-product-id="<%= product.id %>">-<span class="glyphicon glyphicon-shopping-cart"></span></button>
+                                    <button id="js-add1ToCart-<%= product.id %>" type="button" class="btn btn-success js-add1ToCart js-tooltips" data-product-id="<%= product.id %>">+<span class="glyphicon glyphicon-shopping-cart"></span></button>
+                                    <button id="js-rmv1FromCart-<%= product.id %>" type="button" class="btn btn-danger js-rmv1FromCart js-tooltips" data-product-id="<%= product.id %>">-<span class="glyphicon glyphicon-shopping-cart"></span></button>
                                 </div>
                             </div>
                         </div>

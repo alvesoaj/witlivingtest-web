@@ -12,7 +12,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="pull-right">
-                            <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> <%= t('views.miscellaneous.cart.clear') %></button>
+                            <button id="js-clrCart" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> <%= t('views.miscellaneous.cart.clear') %></button>
                         </div>
                     </div>
                 </div>
@@ -40,8 +40,8 @@
                                     <td data-title="<%= t('activerecord.attributes.product.quantity') %>"><%= check_quantity(product) %></td>
                                     <td data-title="<%= t('views.miscellaneous.cart.total') %>"><%= check_total(product) %></td>
                                     <td>
-                                        <button type="button" class="btn btn-info"><span class="glyphicon glyphicon-refresh"></span></button>
-                                        <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+                                        <button type="button" class="btn btn-info js-updCartBtn" data-product-id="<%= product.id %>"><span class="glyphicon glyphicon-refresh"></span></button>
+                                        <button type="button" class="btn btn-danger js-rmvFromCart" data-product-id="<%= product.id %>"><span class="glyphicon glyphicon-trash"></span></button>
                                     </td>
                                 </tr>
                             <% end %>
@@ -59,7 +59,7 @@
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <h4><%= t('views.miscellaneous.cart.finish_order') %> <%= t('views.miscellaneous.cart.total', total: check_cart_total(@products)) %>:</h4>
+                        <h4><%= t('views.miscellaneous.cart.finish_order') %> <strong><%= t('views.miscellaneous.cart.ctotal', total: check_cart_total(@products)) %></strong>:</h4>
                     </div>
                     <div class="col-md-2">
                         <div class="pull-right">
