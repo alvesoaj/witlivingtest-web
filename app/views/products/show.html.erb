@@ -4,7 +4,7 @@
     <div class="col-md-6">
         <p>
             <strong><%= t("activerecord.attributes.product.photo") %>:</strong>
-            <%= image_tag(@product.photo.medium.url, class: 'img-rounded') %>
+            <%= image_tag(@product.photo.medium.url, class: 'img-rounded') if @product.photo.url %>
         </p>
     </div>
     <div class="col-md-6">

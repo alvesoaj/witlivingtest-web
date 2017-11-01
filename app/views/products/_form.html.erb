@@ -13,7 +13,7 @@
 
     <div class="form-group">
         <%= f.label :photo %>
-        <%= image_tag(product.photo.url) if product.photo? %>
+        <%= image_tag(product.photo.url) if product.photo.url %>
         <%= f.file_field :photo %>
         <%= f.hidden_field :photo_cache %>
     </div>

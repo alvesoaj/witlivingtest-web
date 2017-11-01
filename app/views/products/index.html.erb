@@ -35,7 +35,7 @@
                 <tbody>
                     <% @products.each do |product| %>
                         <tr>
-                            <td data-title="<%= t("activerecord.attributes.product.photo") %>"><%= image_tag(product.photo.thumb.url, class: 'img-rounded') %></td>
+                            <td data-title="<%= t("activerecord.attributes.product.photo") %>"><%= image_tag(product.photo.thumb.url, class: 'img-rounded') if product.photo.url %></td>
                             <td data-title="<%= t("activerecord.attributes.product.name") %>"><%= product.name %></td>
                             <td data-title="<%= t("activerecord.attributes.product.price") %>"><%= number_to_currency(product.price, unit: t('unit')) %></td>
                             <td data-title="<%= t("activerecord.attributes.product.quantity") %>"><%= product.quantity %></td>

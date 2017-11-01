@@ -34,7 +34,13 @@
                         <tbody>
                             <% @products.each do |product| %>
                                 <tr>
-                                    <td data-title="<%= t('activerecord.attributes.product.photo') %>"><%= image_tag(product.photo.thumb.url, class: 'img-rounded') %></td>
+                                    <td data-title="<%= t('activerecord.attributes.product.photo') %>">
+                                        <% if product.photo.url %>
+                                            <%= image_tag(product.photo.thumb.url, class: 'img-thumbnail') %>
+                                        <% else %>
+                                            <img src="https://unsplash.it/150/200/?random" alt="" class="img-thumbnail">
+                                        <% end %>        
+                                    </td>
                                     <td data-title="<%= t('activerecord.attributes.product.name') %>"><%= product.name %></td>
                                     <td data-title="<%= t('activerecord.attributes.product.price') %>"><%= check_price(product) %></td>
                                     <td data-title="<%= t('activerecord.attributes.product.quantity') %>"><%= check_quantity(product) %></td>

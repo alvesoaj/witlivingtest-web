@@ -54,6 +54,7 @@ group :development, :test do
     gem 'byebug', platform: :mri
     ### TEST
     gem 'rspec-rails', '~> 3.6'
+    gem 'capybara', '~> 2.4.0'
     ### TO CONTINUE USING IN TEST
     gem 'rails-controller-testing'
 end

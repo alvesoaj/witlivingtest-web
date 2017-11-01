@@ -7,7 +7,11 @@
                 <% group.each do |product| %>
                     <div class="row">
                         <div class="col-md-4">
-                            <%= image_tag(product.photo.thumb.url, class: 'img-thumbnail') %>
+                            <% if product.photo.url %>
+                                <%= image_tag(product.photo.thumb.url, class: 'img-thumbnail') %>
+                            <% else %>
+                                <img src="https://unsplash.it/150/200/?random" alt="" class="img-thumbnail">
+                            <% end %>
                         </div>
                         <div class="col-md-8">
                             <h4><%= product.name %></h4>
