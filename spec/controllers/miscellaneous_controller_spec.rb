@@ -18,6 +18,23 @@ RSpec.describe MiscellaneousController, type: :controller do
             get :home
             expect(session[:cart]).not_to eq(nil)
         end
+
+        it 'test if old session, than 2 days, expires' do
+            product_one = products(:one)
+            product_two = products(:two)
+            
+            session[:cart] = {
+                id: SecureRandom.uuid,
+                create_at: (Time.current - 24.days), # 2.days
+                products: [
+                    { id: product_one.id, quantity: 1, price: 25.0 },
+                    { id: product_two.id, quantity: 1, price: 15.0 }
+                ]
+            }.to_json
+
+            get :home
+            expect(JSON.parse(session[:cart])['products'].size).to eq(0)
+        end
     end
     
     describe 'GET #cart' do

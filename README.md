@@ -1,4 +1,12 @@
-## Full Setup (Not really needed)
+## APP test tips
+
+### Run seed:
+
+`rake db:seed`
+
+### use user: 'joao@email.com' and password: '123456789' to manage products and users
+
+## Development Setup (Not needed to test APP)
 
 ### With NPM installed, Installing Bower:
 
@@ -23,6 +31,7 @@
 
 `bower install bootstrap --save`
 
-### IMAGE SOURCES
+## IMAGE SOURCES
 
 cart.png and cart.ico -> https://icons8.com
+All book cover images -> https://amazon.com

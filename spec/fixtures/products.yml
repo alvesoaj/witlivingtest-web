@@ -2,16 +2,16 @@ one:
   name: Test Product 1
   description: Test Description
   price: 10.0
-  quantity: 10
+  quantity: 9
 
 two:
   name: Test Product 2
   description: Test Description
-  price: 20.0
-  quantity: 100
+  price: 10.0
+  quantity: 9
 
-thee:
+three:
   name: Test Product 3
   description: Test Description
-  price: 2.0
-  quantity: 40
+  price: 10.0
+  quantity: 9
